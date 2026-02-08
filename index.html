@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Chuje 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+h2 {
+  color: #ff4d6d;
+}
+
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 70px;
+}
+
+button {
+  padding: 10px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: #ccc;
+  position: absolute;
+}
+
+#result {
+  display: none;
+  margin-top: 20px;
+}
+
+#result img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Chuje, I have one question for you… 💭</h2>
+  <p>Will you be my lifetime partner?</p>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes 🌸</button>
+    <button id="no" onmouseover="moveNo()">No 🙈</button>
+  </div>
+
+  <div id="result">
+    <h2>My heart knows the way — it always leads to you 💫</h2>
+    <img src="photo.jpg">
+  </div>
+</div>
+
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function moveNo() {
+  let btn = document.getElementById("no");
+  let x = Math.random() * 200 - 100;
+  let y = Math.random() * 60 - 30;
+  btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function yesClicked() {
+  document.getElementById("result").style.display = "block";
+  document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
